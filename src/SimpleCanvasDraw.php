@@ -197,6 +197,21 @@ trait SimpleCanvasDraw {
     }
 
     /**
+     * @param int $x
+     * @param int $y
+     * @param string $color
+     * @return SimpleCanvas
+     * @throws Exception
+     * @author Nick <weist.wei@gmail.com>
+     * @date 2022-10-06
+     */
+    public function drawPixel(int $x, int $y, string $color): SimpleCanvas{
+        $canvasColor = $this->getCanvasColor($color);
+        imagesetpixel($this->image, $x, $y, $canvasColor);
+        return $this;
+    }
+
+    /**
      * @param int $startX
      * @param int $startY
      * @param int $endX
